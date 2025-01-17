@@ -2,6 +2,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import ThemeToggle from "@/components/ThemeToggle";
+import MobileMenu from "@/components/MobileMenu";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -20,8 +21,10 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50">
             <div className="container mx-auto px-4">
-              <div className="flex items-center justify-end h-16">
-                <div className="flex items-center space-x-8">
+              <div className="flex items-center justify-between h-16">
+                <MobileMenu />
+                
+                <div className="hidden md:flex items-center space-x-8 ml-auto">
                   <a href="#" className="hover:text-blue-600 transition">
                     Ana Sayfa
                   </a>
