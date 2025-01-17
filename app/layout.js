@@ -60,7 +60,8 @@ export default function RootLayout({ children }) {
                   GitHub
                 </a>
               </div>
-              <p>&copy; {new Date().getFullYear()} Hasan Basri Taşkın. Tüm hakları saklıdır.</p>
+              <p className="mb-2">&copy; {new Date().getFullYear()} Hasan Basri Taşkın. Tüm hakları saklıdır.</p>
+              <p className="text-sm text-gray-400 italic">❤️ Doğan sevgisiyle hazırlandı</p>
             </div>
           </footer>
         </ThemeProvider>
