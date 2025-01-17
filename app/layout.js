@@ -22,9 +22,12 @@ export default function RootLayout({ children }) {
           <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50">
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16">
-                <MobileMenu />
+                <div className="flex items-center space-x-4">
+                  <MobileMenu />
+                  <ThemeToggle />
+                </div>
                 
-                <div className="hidden md:flex items-center space-x-8 ml-auto">
+                <div className="hidden md:flex items-center space-x-8">
                   <a href="#" className="hover:text-blue-600 transition">
                     Ana Sayfa
                   </a>
@@ -37,7 +40,6 @@ export default function RootLayout({ children }) {
                   <a href="#contact" className="hover:text-blue-600 transition">
                     İletişim
                   </a>
-                  <ThemeToggle />
                 </div>
               </div>
             </div>
