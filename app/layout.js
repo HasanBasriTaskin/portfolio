@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from "@/components/MobileMenu";
+import { Analytics } from '@vercel/analytics/react';
 
 const geist = Geist({
   subsets: ["latin"],
@@ -22,8 +23,7 @@ export default function RootLayout({ children }) {
           <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50">
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16">
-                <div className="flex items-center space-x-4">
-                  <MobileMenu />
+                <div>
                   <ThemeToggle />
                 </div>
                 
@@ -40,6 +40,10 @@ export default function RootLayout({ children }) {
                   <a href="#contact" className="hover:text-blue-600 transition">
                     İletişim
                   </a>
+                </div>
+
+                <div className="md:hidden">
+                  <MobileMenu />
                 </div>
               </div>
             </div>
@@ -69,6 +73,7 @@ export default function RootLayout({ children }) {
               <p className="text-sm text-gray-400 italic">❤️ Doğan sevgisiyle hazırlandı</p>
             </div>
           </footer>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
